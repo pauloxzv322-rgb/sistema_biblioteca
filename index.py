@@ -39,18 +39,17 @@ else:
         else:
             st.error("Emprestado")
 
-            col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
 
  #Empréstimo
-            with col1:
-                if st.button("Emprestar", key=f"emprestado{i}"):
-                  if livro["emprestado"] == False:
+        with col1:
+            if st.button("Emprestar", key=f"emprestado{i}"):
                     st.session_state.livros[i]["emprestado"] = True
                     st.rerun()
                 
-            with col2:
-                if st.button("Devolver", key=f"devolver{i}"):
+        with col2:
+            if st.button("Devolver", key=f"devolver{i}"):
                     st.session_state.livros[i]["emprestado"] = False
                     st.rerun()
-                    st.divider()
+            st.divider()
                         
